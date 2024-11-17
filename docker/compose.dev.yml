@@ -1,0 +1,40 @@
+services:
+  fund-finder-backend:
+    container_name: fund_finder_backend
+    build:
+      context: ../app
+    ports:
+      - "8080:8000"  # Map internal port 8000 to host's 8080
+    env_file:
+      - ../envs/.env.dev
+    volumes:
+      - ../app:/app  # Sync local code with container
+    networks:
+      - fund-finder-network
+
+  postgres:
+    container_name: postgres_fund_finder
+    image: postgres:14
+    ports:
+      - "5433:5432"  # Avoid default port conflicts
+    env_file:
+      - ../envs/.env.dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - fund-finder-network
+
+  redis:
+    container_name: redis_fund_finder
+    image: redis:6
+    ports:
+      - "6380:6379"  # Avoid default port conflicts
+    networks:
+      - fund-finder-network
+
+volumes:
+  postgres_data:
+
+networks:
+  fund-finder-network:
+    driver: bridge
