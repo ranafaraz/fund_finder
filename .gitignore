@@ -1,0 +1,57 @@
+# Python files
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.env
+
+# Django files
+db.sqlite3
+debug.log
+/media/
+staticfiles/
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+
+# Docker files
+docker-compose.override.yml
+docker/postgres/db_dump.sql
+.env.*
+.env
+
+# Allow .env.example
+!.env.example
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.out
+*.err
+
+# Testing
+.tox/
+.pytest_cache/
+.coverage
+coverage.xml
+*.cover
+htmlcov/
+
+# Node.js files (if applicable for frontend dependencies)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
