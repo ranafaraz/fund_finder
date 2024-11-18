@@ -37,4 +37,9 @@ volumes:
 
 networks:
   fund-finder-network:
+    name: fund-finder-network
     driver: bridge
+#    external: true
+
+
+#  docker-compose -f docker/compose.dev.yml up --build -d

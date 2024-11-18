@@ -26,5 +26,5 @@ urlpatterns = [
 #     path('', home_view),  # Root URL handler
     path('admin/', admin.site.urls),
     path('grants/', include('grants.urls')),
-    path('', RedirectView.as_view(url='/grants/', permanent=True)),  # Redirect root to /grants/
+#     path('', RedirectView.as_view(url='/grants/', permanent=True)),  # Redirect root to /grants/
 ]

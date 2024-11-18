@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',  # Add Django REST Framework
+#     "rest_framework_api_key", # Set Up API Key Authentication # docker exec -it fund_finder_backend python manage.py migrate
     'corsheaders', # To allow requests from the frontend.
     'grants',  # Our custom grants app
 
@@ -93,6 +94,12 @@ CACHES = {
         },
     }
 }
+
+# REST_FRAMEWORK = {
+#     "DEFAULT_AUTHENTICATION_CLASSES": [
+#         "rest_framework_api_key.permissions.HasAPIKey",
+#     ],
+# }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
